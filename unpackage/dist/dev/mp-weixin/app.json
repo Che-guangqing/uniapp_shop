@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/play/play",
+    "pages/goods/goods",
+    "pages/ranking/ranking",
+    "pages/my/my"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "default"
+  },
+  "tabBar": {
+    "color": "#",
+    "selectedColor": "#000",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "fontSize": "16px",
+    "height": "60px",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "selectedIconPath": "./static/shop/icon/首页-选中.png",
+        "iconPath": "static/shop/icon/首页-未选中.png"
+      },
+      {
+        "pagePath": "pages/play/play",
+        "text": "游戏圈",
+        "selectedIconPath": "static/shop/icon/游戏圈-选中.png",
+        "iconPath": "static/shop/icon/游戏圈-未选中.png"
+      },
+      {
+        "pagePath": "pages/goods/goods",
+        "text": "换好物",
+        "selectedIconPath": "static/shop/icon/换好物选中.png",
+        "iconPath": "static/shop/icon/换好物未选中.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "selectedIconPath": "static/shop/icon/我的选中.png",
+        "iconPath": "static/shop/icon/我的未选中.png"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}
