@@ -13,12 +13,12 @@
     "navigationStyle": "default"
   },
   "tabBar": {
-    "color": "#",
+    "color": "#333333",
     "selectedColor": "#000",
     "backgroundColor": "#fff",
     "borderStyle": "white",
-    "fontSize": "16px",
-    "height": "60px",
+    "fontSize": "19rpx",
+    "height": "98rpx",
     "list": [
       {
         "pagePath": "pages/index/index",
@@ -46,6 +46,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }

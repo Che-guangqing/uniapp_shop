@@ -211,8 +211,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
-//
-//
 var _default =
 {
   data: function data() {
@@ -245,10 +243,10 @@ var _default =
 
       tabIndex: 0,
       bars: [
-      // {
-      // 	name:'全部',
-      // 	id:'quanbu'		
-      // },
+      {
+        name: '全部',
+        id: 'quanbu' },
+
       {
         name: '闪兑专区',
         id: 'shandui' },
@@ -269,70 +267,74 @@ var _default =
         name: '公益专区',
         id: 'gongyi' }],
 
+
       contentList: [{
         type: '闪兑专区',
+        id: 'shandui',
         typeDes: '使用商城币兑换相应产品，不限次数',
         cont: [{
-          img: '../../static/shop/goods.webp',
-          goodsDes: '海蓝之谜，啦啦啦啦啦啦啦',
+          img: '../../static/shop/goods.jpg',
+          goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦绿',
           icon: '',
           price: '199',
           num: '999+' },
         {
-          img: '../../static/shop/goods.webp',
-          goodsDes: '海蓝之谜，啦啦啦啦啦啦啦',
+          img: '../../static/shop/goods.jpg',
+          goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦绿',
           icon: '',
           price: '199',
-          num: '999+' }] },
+          num: '5000' }] },
 
       {
         type: '密友专区',
+        id: 'miyou',
         typeDes: '密友越多，解锁更多专项产品',
         cont: [{
-          img: '../../static/shop/goods.webp',
-          goodsDes: '海蓝之谜，啦啦啦啦啦啦啦',
+          img: '../../static/shop/goods2.png',
+          goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦绿',
+          icon: '',
+          price: '199',
+          num: '5000' },
+        {
+          img: '../../static/shop/goods3.jpg',
+          goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦绿',
           icon: '',
           price: '199',
           num: '999+' },
         {
-          img: '../../static/shop/goods.webp',
-          goodsDes: '海蓝之谜，啦啦啦啦啦啦啦',
-          icon: '',
-          price: '199',
-          num: '999+' }] },
-
-      {
-        type: '任务专区',
-        typeDes: '密友越多，解锁更多专项产品',
-        cont: [{
-          img: '../../static/shop/goods.webp',
-          goodsDes: '海蓝之谜，啦啦啦啦啦啦啦',
+          img: '../../static/shop/goods4.jpg',
+          goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦绿',
           icon: '',
           price: '199',
           num: '999+' },
         {
-          img: '../../static/shop/goods.webp',
-          goodsDes: '海蓝之谜，啦啦啦啦啦啦啦',
+          img: '../../static/shop/goods.jpg',
+          goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦绿',
           icon: '',
           price: '199',
-          num: '500' }] }] };
+          num: '999+' }] }],
 
 
-
-
-
-
+      newArry: [] };
 
   },
+  onReady: function onReady() {
+    this.newArry = this.contentList;
+  },
   methods: {
-    //切换选项卡
     toggleTab: function toggleTab(index) {
+      var list = this.contentList;
+      if (index === 1) {
+        this.newArry = list.slice(0, 1);
+      } else if (index === 2) {
+        this.newArry = list.slice(1, 2);
+      } else if (index === 0) {
+        this.newArry = list;
+      } else {
+        this.newArry = [];
+      }
+      console.log(this.newArry);
       this.tabIndex = index;
-    },
-    //滑动切换swiper
-    tabChange: function tabChange(e) {
-      console.log(e);
-      this.tabIndex = e.detail.current;
     } } };exports.default = _default;
 
 /***/ }),

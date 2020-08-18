@@ -1,6 +1,6 @@
 <template>
 	<view>
-		
+		换好物
 	</view>
 </template>
 
