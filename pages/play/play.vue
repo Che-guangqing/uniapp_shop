@@ -1,5 +1,6 @@
 <template>
 	<view>
+		play
 		<!-- <button open-type="getUserInfo" lang="zh_CN" @getuserinfo="onGotUserInfo">授权账号信息</button> -->
 		<open-data type="userNickName" ></open-data>
 		<open-data type="userAvatarUrl"></open-data>
