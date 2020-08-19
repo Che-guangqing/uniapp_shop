@@ -15,7 +15,25 @@
             "style" : {}
         },{
             "path" : "pages/my/my",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText": "小玩益",
+				"navigationBarBackgroundColor":"#FFD700",
+				"navigationBarTextStyle":"black"	
+			}
+        }
+        ,{
+            "path" : "pages/addressList/addressList",
+            "style" : {
+				"navigationBarTitleText": "小玩益",
+				"navigationBarBackgroundColor":"#FFD700"
+			}
+        }
+        ,{
+            "path" : "pages/addAddress/addAddress",
+            "style" : {
+				"navigationBarTitleText": "小玩益",
+				"navigationBarBackgroundColor":"#FFD700"
+			}
         }
     ],
 	"globalStyle": {

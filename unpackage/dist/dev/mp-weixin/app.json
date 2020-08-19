@@ -4,7 +4,9 @@
     "pages/play/play",
     "pages/goods/goods",
     "pages/ranking/ranking",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/addressList/addressList",
+    "pages/addAddress/addAddress"
   ],
   "subPackages": [],
   "window": {

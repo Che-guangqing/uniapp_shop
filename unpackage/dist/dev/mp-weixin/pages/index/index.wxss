@@ -408,10 +408,13 @@
 		/* margin-top: 18rpx; */
 		padding:0 20rpx;
 		font-size: 24rpx;
+		height: 52rpx;
 }
 .item_bottom{
-		margin-top: 10rpx;
+		margin-top: 30rpx;
 		padding: 0 12rpx;
+		line-height:26rpx;
+		height: 26rpx;
 }
 .round{
 		width: 26rpx;

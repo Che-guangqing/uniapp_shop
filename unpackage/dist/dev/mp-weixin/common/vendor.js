@@ -7672,9 +7672,9 @@ module.exports = g;
 
 /***/ }),
 /* 4 */
-/*!************************************************!*\
-  !*** /Users/yagao/Desktop/uni-shop/pages.json ***!
-  \************************************************/
+/*!***************************************************!*\
+  !*** /Users/yagao/Desktop/uniapp-shop/pages.json ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -7815,9 +7815,9 @@ function normalizeComponent (
 
 /***/ }),
 /* 11 */
-/*!*********************************************************!*\
-  !*** /Users/yagao/Desktop/uni-shop/static/iconfont.css ***!
-  \*********************************************************/
+/*!************************************************************!*\
+  !*** /Users/yagao/Desktop/uniapp-shop/static/iconfont.css ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
