@@ -1,1 +1,1 @@
-<view>换好物</view>
+<view><view class="tx-w"><view class="tx"><image class="tx-img" src="{{yonghuwx.avatarUrl}}"></image><view class="zx"></view></view><view class="name">{{yonghuwx.nickName+''}}</view></view></view>

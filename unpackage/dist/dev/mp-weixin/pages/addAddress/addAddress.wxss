@@ -15,10 +15,14 @@
 	padding-left: 30rpx;
 	color: #3B3B3B;
 }
-.uni-input {
+.inp {
 	padding-left: 30rpx;
 	height: 88rpx;
 	border-bottom: 2rpx solid #ededed;
+	color: #999999;
+	
+	line-height: 88rpx;
+	font-size: 29rpx;
 	color: #999999;
 }
 .submitBtn {

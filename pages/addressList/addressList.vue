@@ -1,6 +1,6 @@
 <template>
 	<view class="wrapper">
-		<view class="box" v-for="(item,index) in list" :key="index">
+		<view class="box" v-for="(item,index) in addressList" :key="index">
 			<view class="info">
 				<view class="info_row">
 					<text class="info_name">{{item.name}}</text>
@@ -12,43 +12,69 @@
 			</view>
 			<view class="btn">
 				<view class="btn_row">
-					<view class="flex1">
-						<image class="btn_sure" src="../../static/my/sure.png" mode=""></image>
+					<view class="flex1" @click="onSure(index)">
+						<image v-if="flag" class="btn_sure" src="../../static/my/sure.png" mode=""></image>
+						<image v-else class="btn_sure" src="../../static/my/no.png" mode=""></image>
 						<text>默认地址</text>
 					</view>
-					<image class="btn_del" src="../../static/my/del.png" mode=""></image>
-					<text>删除</text>
+					<view class="del"  @click="delAdress(index)">
+						<image class="btn_del" src="../../static/my/del.png" mode=""></image>
+						<text>删除</text>
+					</view>
+
 				</view>
 			</view>
 		</view>
 
-		<navigator url="../addAddress/addAddress"  open-type="redirect">
-			<button class="add_address" type="warn">添加新地址</button>
+		<navigator url="../addAddress/addAddress" open-type="redirect">
+			<button class="add_address" type="warn">添加新地址 </button>
 		</navigator>
-		
+
+
 
 	</view>
 </template>
 
 <script>
+	import {
+		mapState
+	} from 'vuex'
 	export default {
 		data() {
 			return {
-				list: [{
-					name: '马玉娇',
-					tel: '17682927656',
-					address: '陕西省西安市雁塔区科技路',
-					flag: true
-				}, {
-					name: '马玉娇',
-					tel: '17682927656',
-					address: '陕西省西安市雁塔区科技路',
-					flag: true
-				}]
+				// addressList: [],
+				// tempList:[],
+				// addressList: [{
+				// 	name: '马玉娇',
+				// 	tel: '17682927656',
+				// 	address: '陕西省西安市雁塔区科技路',
+				// 	flag: true
+				// }, {
+				// 	name: '马玉娇',
+				// 	tel: '17682927656',
+				// 	address: '陕西省西安市雁塔区科技路',
+				// 	flag: true
+				// }]
 			}
 		},
 		methods: {
-
+			delAdress(index) {
+				this.$store.state.addressList.splice(index,1)
+			},
+			onSure(index) {
+				console.log(!this.$store.state.addressList[index].flag)
+			}
+		},
+		computed: {
+			...mapState(['addressList','flag']),
+		},
+		onLoad() {
+			// uni.getStorage({
+			// 	key: 'alist',
+			// 	success: (res) => {
+			// 		this.$store.state.addressList = res.data;
+			// 	}
+			// });
 		}
 	}
 </script>
