@@ -7,13 +7,13 @@
 					<text class="info_tel">{{item.tel}}</text>
 				</view>
 				<view class="address">
-					{{item.address}}
+					{{item.txt}} {{item.address}} 
 				</view>
 			</view>
 			<view class="btn">
 				<view class="btn_row">
 					<view class="flex1" @click="onSure(index)">
-						<image v-if="flag" class="btn_sure" src="../../static/my/sure.png" mode=""></image>
+						<image v-if="item.flag" class="btn_sure" src="../../static/my/sure.png" mode=""></image>
 						<image v-else class="btn_sure" src="../../static/my/no.png" mode=""></image>
 						<text>默认地址</text>
 					</view>
@@ -62,7 +62,7 @@
 				this.$store.state.addressList.splice(index,1)
 			},
 			onSure(index) {
-				console.log(!this.$store.state.addressList[index].flag)
+				this.$store.commit("onsure", index)
 			}
 		},
 		computed: {
@@ -82,7 +82,7 @@
 <style>
 	.wrapper {
 		width: 100%;
-		height: 1334rpx;
+		height: 1155rpx;;
 		background-color: #f6f6f6;
 	}
 

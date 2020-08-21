@@ -4,7 +4,7 @@ import store from './store'
 import Iconfont from './static/iconfont.css'
 Vue.config.productionTip = false
 
-// console.log(store.state.name)
+
 
 Vue.prototype.$store=store
 

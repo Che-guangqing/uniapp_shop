@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"enhance": false,
 		"postcss": true,
@@ -45,7 +45,15 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
+			"current": -1,
+			"list": []
+		},
+		"gamePlugin": {
 			"current": -1,
 			"list": []
 		},
@@ -53,10 +61,10 @@
 			"current": 0,
 			"list": [
 				{
-					"name": "",
-					"path": "",
-					"query": "",
-					"id": 0
+					"id": -1,
+					"name": "pages/addressList/addressList",
+					"pathName": "pages/addressList/addressList",
+					"scene": null
 				}
 			]
 		}

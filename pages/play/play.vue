@@ -1,46 +1,72 @@
 <template>
 	<view>
-		play
-		<!-- <button open-type="getUserInfo" lang="zh_CN" @getuserinfo="onGotUserInfo">授权账号信息</button> -->
-		<open-data type="userNickName" ></open-data>
-		<open-data type="userAvatarUrl"></open-data>
+		<!--form表单-->
+		<!-- 		<form bindsubmit="formSubmit">
+			<input style="border:1px solid #000;" name="geocoder"></input>
+			<button form-type="submit">地址解析</button>
+		</form> -->
+
 	</view>
 </template>
 
 <script>
+	// 引入高德地图
+	// var amapFile = require('../../libs/amap-wx.js')
+	// var config = require('../../libs/config.js');
+
+	// 引入腾讯地图
+	var QQMapWX = require('../../libs/qqmap-wx-jssdk.js');
+
+
 	export default {
 		data() {
 			return {
-
+				tips: {},
+				address: '',
+				//经纬度
+				latitude:'', 
+				longitude:''
 			}
 		},
 		onLoad() {
-			this.changeLogin();
+			var that = this;
+			var qqmapsdk = new QQMapWX({
+				key: 'UXEBZ-KBZ35-RQ5IJ-QCPL4-SJWMF-NJBWG'
+			});
+
+			//  通过输入的地址获取经纬度
+			qqmapsdk.geocoder({
+				address: '时候覅都能',
+				success: function(res) {
+					//成功回调
+					this.latitude = res.result.location.lat;
+					this.longitude = res.result.location.lng;
+					console.log('成功', this.latitude,this.longitude)
+				},
+				fail: function(info) {
+					//失败回调
+					console.log('失败', info)
+				}
+			});
+			
+			// 通过经纬度获取详细信息
+			qqmapsdk.reverseGeocoder({
+				location:{
+					latitude:34.22259 ,
+					longitude:108.94878 
+				},
+				success:function (res) {
+					console.log('成功',res)
+				},
+				fail: function(info) {
+					//失败回调
+					console.log('失败', info)
+				}
+			})
 		},
+
 		methods: {
-			changeLogin() {
-				// 授权
-				// 获取用户详细信息, 可以获取到说明已经授权过, 直接拿到用户信息
-				uni.getUserInfo({
-					provider: 'weixin',
-					//授权成功的回调
-					success(res) {
-						uni.showToast({
-							title: '授权成功',
-							icon: 'none'
-						})
-						console.info(res.data)
-						//that.login(res.data);//授权成功调用自己的登录方法就可以了
-					},
-					//第一次进入小程序
-					fail() {
-						uni.showToast({
-							title: '请点击授权进行登录',
-							icon: 'none'
-						});
-					}
-				});
-			}
+
 		}
 	}
 </script>

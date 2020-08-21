@@ -48,6 +48,10 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap3.json"
+  "permission": {
+    "scope.userLocation": {
+      "desc": "位置信息"
+    }
+  },
+  "usingComponents": {}
 }

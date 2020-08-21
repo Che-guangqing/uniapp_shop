@@ -45,6 +45,11 @@
         "appid" : "wx95cf300603faf88f",
         "setting" : {
             "urlCheck" : true
+        },
+        "permission" : {
+            "scope.userLocation" : {
+                "desc" : "位置信息"
+            }
         }
     }
 }
