@@ -1,0 +1,152 @@
+
+.wrapper {
+		width: 100%;
+		height: 1246rpx;
+		background-color: #f6f6f6;
+}
+.state {
+		height: 150rpx;
+		background-color: #ffe2ca;
+}
+.state_text {
+		font-size: 29rpx;
+		color: #000000;
+		margin-left: 76rpx;
+}
+	/* address */
+.address {
+		height: 150rpx;
+		background-color: #FFFFFF;
+		font-size: 26rpx;
+		color: #3B3B3B;
+		padding-left: 30rpx;
+}
+.info_row{
+}
+.info_name{
+		display: inline-block;
+		margin-top: 20rpx;
+		margin-right: 60rpx;
+}
+.info_tel{
+}
+.info_address{
+		margin-top: 20rpx;
+}
+.bg {}
+	/* goods */
+.goods{
+		margin-top: 20rpx;
+		background-color: #FFFFFF;
+		padding-left: 30rpx;
+}
+.top{
+		font-size: 29rpx;
+		color: #3B3B3B;
+		border-bottom: 1rpx solid #999999;
+		line-height: 50rpx;
+}
+.bottom{
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		margin-top: 20rpx;
+}
+.left{
+		width: 140rpx;
+		height: 140rpx;
+		margin-right: 20rpx;
+		border: 1rpx solid red;
+}
+.right{
+		/* flex: 1; */
+}
+.row{
+		font-size: 26rpx;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+}
+.row_title{
+		display: inline-block;
+		width: 320rpx;
+		margin-right: 200rpx;
+}
+.num{
+		display: inline-block;
+}
+.color{
+		font-size: 24rpx;
+		color: #999999;
+		margin-top: 20rpx;
+}
+.money{
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-box-pack:end;
+		-webkit-justify-content:flex-end;
+		        justify-content:flex-end;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		        align-items: center;
+}
+.gold {
+		width: 30rpx;
+		height: 30rpx;
+		margin-right: 10rpx;
+}
+.money_text{
+		font-size: 29rpx;
+}
+	/* order_info */
+.order_info{
+		height: 162rpx;
+		background-color: #FFFFFF;
+		margin-top: 20rpx;
+		font-size: 24rpx;
+		padding-left: 30rpx;
+		color: #666666;
+		line-height: 45rpx;
+}
+.order_title{
+		display: inline-block;
+		margin-top: 20rpx;
+		font-size: 29rpx;
+		color: #3B3B3B;
+}
+.order_num{
+		/* margin-top: 28rpx; */
+}
+.order_time{
+		/* margin-top: 20rpx; */
+}
+	/* button */
+.button{
+		position: absolute;
+		bottom: 0;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-box-pack: end;
+		-webkit-justify-content: flex-end;
+		        justify-content: flex-end;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		        align-items: center;
+		background-color: #FFFFFF;
+		width: 100%;
+		height:120rpx;
+		/* border-top:3rpx solid #999 */
+}
+.item{
+		width: 160rpx;
+		height: 80rpx;
+		border: 2rpx solid #999999;
+		border-radius: 16rpx;
+}
+.item.pay{
+		border-color: #FE5001;
+		color: #fe5001;
+}
+

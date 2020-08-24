@@ -56,7 +56,7 @@
 				<view class="text"><text class="big">{{content.type}}</text> <text class="small">{{content.typeDes}}</text></view>
 				<view class="swiper_flex">
 					<view class="swiper_item" v-for="(item,index) in content.cont">
-						<view class="swiper_con">
+						<view class="swiper_con" @click="goodsDetails(item)">
 							<image class="item_img" :src="item.img" mode=""></image>
 							<view class="item_des">{{item.goodsDes}}</view>
 							<view class="item_bottom">
@@ -135,17 +135,28 @@
 					id: 'shandui',
 					typeDes: '使用商城币兑换相应产品，不限次数',
 					cont: [{
+						id:1,
 						img: '../../static/shop/goods.jpg',
 						goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦绿',
 						icon: '',
 						price: '199',
-						num: '999+'
+						num: '999+',
+						
+						swiperImg:["../../static/1.jpg","../../static/2.jpg","../../static/3.jpeg"],
+						size:['S','M','L'],
+						color:['黄色','紫色']
+						
 					}, {
+						id:2,
 						img: '../../static/shop/goods.jpg',
 						goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦绿',
 						icon: '',
 						price: '199',
-						num: '5000'
+						num: '5000',
+						
+						swiperImg:["../../static/4.jpg","../../static/5.jpg","../../static/6.jpg"],
+						size:['S','M','L'],
+						color:['黄色','紫色']
 					}, ]
 				}, {
 					type: '密友专区',
@@ -198,6 +209,14 @@
 				console.log(this.newArry)
 				this.tabIndex = index;
 			},
+			
+			// 跳转商品详情页
+			goodsDetails (item) {
+				uni.navigateTo({
+					url:"../goodsDetail/goodsDetail?info=" + JSON.stringify(item)
+				});
+					// console.log(item)
+			}
 		}
 	}
 </script>

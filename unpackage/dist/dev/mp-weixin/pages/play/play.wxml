@@ -1,1 +1,1 @@
-<view></view>
+<view><button data-event-opts="{{[['tap',[['open',['$event']]]]]}}" bindtap="__e">打开弹窗</button><uni-popup vue-id="8f2a4780-1" type="bottom" animation="{{true}}" bind:__l="__l" vue-slots="{{['default']}}"><view class="pop_up">弹框</view></uni-popup></view>

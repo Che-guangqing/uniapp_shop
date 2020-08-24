@@ -55,7 +55,6 @@
 				console.log('picker发送选择改变，携带值为',this.txt)
 			},
 			
-
 			// 添加信息
 			addAddress() {
 				// 判断电话号码
@@ -94,7 +93,6 @@
 							console.log('地址不可信')
 							this.addressFlag = false
 						}
-
 					},
 					fail: info => {
 						//失败回调

@@ -6,7 +6,10 @@
     "pages/ranking/ranking",
     "pages/my/my",
     "pages/addressList/addressList",
-    "pages/addAddress/addAddress"
+    "pages/addAddress/addAddress",
+    "pages/goodsDetail/goodsDetail",
+    "layout/popup/popup",
+    "pages/order/order"
   ],
   "subPackages": [],
   "window": {

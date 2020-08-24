@@ -138,7 +138,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
 //
 //
 //
@@ -275,17 +275,28 @@ var _default =
         id: 'shandui',
         typeDes: '使用商城币兑换相应产品，不限次数',
         cont: [{
+          id: 1,
           img: '../../static/shop/goods.jpg',
           goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦绿',
           icon: '',
           price: '199',
-          num: '999+' },
+          num: '999+',
+
+          swiperImg: ["../../static/1.jpg", "../../static/2.jpg", "../../static/3.jpeg"],
+          size: ['S', 'M', 'L'],
+          color: ['黄色', '紫色'] },
+
         {
+          id: 2,
           img: '../../static/shop/goods.jpg',
           goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦绿',
           icon: '',
           price: '199',
-          num: '5000' }] },
+          num: '5000',
+
+          swiperImg: ["../../static/4.jpg", "../../static/5.jpg", "../../static/6.jpg"],
+          size: ['S', 'M', 'L'],
+          color: ['黄色', '紫色'] }] },
 
       {
         type: '密友专区',
@@ -337,7 +348,16 @@ var _default =
       }
       console.log(this.newArry);
       this.tabIndex = index;
+    },
+
+    // 跳转商品详情页
+    goodsDetails: function goodsDetails(item) {
+      uni.navigateTo({
+        url: "../goodsDetail/goodsDetail?info=" + JSON.stringify(item) });
+
+      // console.log(item)
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 /* 20 */

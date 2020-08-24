@@ -1171,11 +1171,11 @@ function handleEvent(event) {var _this = this;
           eventArray[1],
           eventArray[2],
           isCustom,
-          methodName) ||
-          [];
+          methodName);
+
           // 参数尾部增加原始事件对象用于复杂表达式内获取额外数据
           // eslint-disable-next-line no-sparse-arrays
-          ret.push(handler.apply(handlerCtx, params.concat([,,,,,,,,,, event])));
+          ret.push(handler.apply(handlerCtx, (Array.isArray(params) ? params : []).concat([,,,,,,,,,, event])));
         }
       });
     }
@@ -8791,7 +8791,49 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 28:
+/***/ 3:
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+
+/***/ 4:
+/*!***************************************************!*\
+  !*** /Users/yagao/Desktop/uniapp-shop/pages.json ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ 66:
 /*!***************************************************************!*\
   !*** /Users/yagao/Desktop/uniapp-shop/libs/qqmap-wx-jssdk.js ***!
   \***************************************************************/
@@ -9924,49 +9966,80 @@ module.exports = QQMapWX;
 
 /***/ }),
 
-/***/ 3:
-/*!***********************************!*\
-  !*** (webpack)/buildin/global.js ***!
-  \***********************************/
+/***/ 82:
+/*!**********************************************************************!*\
+  !*** /Users/yagao/Desktop/uniapp-shop/components/uni-popup/popup.js ***!
+  \**********************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-var g;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _message = _interopRequireDefault(__webpack_require__(/*! ./message.js */ 83));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+// 定义 type 类型:弹出类型：top/bottom/center
+var config = {
+  // 顶部弹出
+  top: 'top',
+  // 底部弹出
+  bottom: 'bottom',
+  // 居中弹出
+  center: 'center',
+  // 消息提示
+  message: 'top',
+  // 对话框
+  dialog: 'center',
+  // 分享
+  share: 'bottom' };var _default =
 
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
 
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
+{
+  data: function data() {
+    return {
+      config: config };
 
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
+  },
+  mixins: [_message.default] };exports.default = _default;
 
 /***/ }),
 
-/***/ 4:
-/*!***************************************************!*\
-  !*** /Users/yagao/Desktop/uniapp-shop/pages.json ***!
-  \***************************************************/
+/***/ 83:
+/*!************************************************************************!*\
+  !*** /Users/yagao/Desktop/uniapp-shop/components/uni-popup/message.js ***!
+  \************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _created$created$meth;function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default = (_created$created$meth = {
+  created: function created() {
+    if (this.type === 'message') {
+      // 获取自组件对象
+      this.maskShow = false;
+      this.children = null;
+    }
+  } }, _defineProperty(_created$created$meth, "created", function created()
+{
+  if (this.type === 'message') {
+    // 不显示遮罩
+    this.maskShow = false;
+    // 获取子组件对象
+    this.childrenMsg = null;
+  }
+}), _defineProperty(_created$created$meth, "methods",
+{
+  customOpen: function customOpen() {
+    if (this.childrenMsg) {
+      this.childrenMsg.open();
+    }
+  },
+  customClose: function customClose() {
+    if (this.childrenMsg) {
+      this.childrenMsg.close();
+    }
+  } }), _created$created$meth);exports.default = _default;
 
 /***/ }),
 
-/***/ 74:
+/***/ 91:
 /*!**************************************************************!*\
   !*** /Users/yagao/Desktop/uniapp-shop/pickerAddress/data.js ***!
   \**************************************************************/

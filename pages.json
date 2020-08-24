@@ -35,6 +35,26 @@
 				"navigationBarBackgroundColor":"#FFD700"
 			}
         }
+        ,{
+            "path" : "pages/goodsDetail/goodsDetail",
+            "style" : {
+				"navigationBarTitleText": "小玩益",
+				"navigationBarBackgroundColor":"#FFD700",
+				"navigationBarTextStyle":"black"
+			}
+        }
+        ,{
+            "path" : "layout/popup/popup",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/order/order",
+            "style" : {
+				"navigationBarTitleText": "小玩益",
+				"navigationBarBackgroundColor":"#FFD700",
+				"navigationBarTextStyle":"black"
+			}
+        }
     ],
 	"globalStyle": {
 		"navigationBarBackgroundColor":"#fff",
