@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
 	state: {
+		money:1000,
 		txt:'',
 		name: 'cc',
 		tel: null,

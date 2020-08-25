@@ -22,34 +22,36 @@
 		<view class="goods">
 			<view class="top">包裹1</view>
 			<view class="bottom">
-				<view class="left">
-					<!-- <image class="goods_img" src="" mode=""></image> -->
+				<view  >
+					<image class="left" :src="data.img" mode=""></image>
 				</view>
 				<view class="right">
 					<view class="row">
-						<text class="row_title">是基础js语法。浏览器基于标准js</text>
-						<text class="num">X1</text>
+						<text class="row_title">{{data.name}}</text>
+						<text class="num">X{{data.num}}</text>
 					</view>
 					<view class="color">
-						白色；M
+						{{data.color}}；{{data.size}}
 					</view>
 					<view class="money">
 						<image class="gold" src="../../static/shop/icon/币.png" mode=""></image>
-						<text class="money_text">4512</text>
+						<text class="money_text">{{data.all}}</text>
 					</view>
 				</view>
 			</view>
 
 		</view>
 		<view class="order_info">
+			
 			<view class="order_title">
+				<!-- <text class="line"></text> -->
 				订单信息
 			</view>
 			<view class="order_num">
-				订单编号：24526562
+				订单编号：<text class="order-text">{{data.id}}</text>
 			</view>
 			<view class="order_time">
-				下单时间：2019.0502 11：10
+				下单时间：<text class="order-text">{{data.curTime}}</text>
 			</view>
 		</view>
 		<view class="button">
@@ -72,12 +74,13 @@
 		data() {
 			return {
 				// address:null
+				data:null
 			}
 		},
 		computed: {
 			...mapState(['addressList']),
 			address() {
-				console.log(this.addressList)
+				// console.log(this.addressList)
 				let data = this.addressList
 				for (var i = 0; i < data.length; i++) {
 					if (data[i].flag) {
@@ -92,6 +95,10 @@
 
 		mounted() {
 
+		},
+		onLoad(option) {
+			// console.log(JSON.parse(option.data))
+			this.data = JSON.parse(option.data)
 		}
 	}
 </script>
@@ -110,6 +117,8 @@
 		font-size: 29rpx;
 		color: #000000;
 		margin-left: 76rpx;
+		
+		line-height: 60rpx;
 	}
     /* address */
 	.address {
@@ -142,26 +151,27 @@
 	.goods{
 		margin-top: 20rpx;
 		background-color: #FFFFFF;
-		padding-left: 30rpx;
+		/* padding-left: 30rpx; */
 	}
 	.top{
 		font-size: 29rpx;
 		color: #3B3B3B;
-		border-bottom: 1rpx solid #999999;
+		border-bottom: 1rpx solid #f4f4f4;
 		line-height: 50rpx;
+		padding-left: 30rpx;
 	}
 	.bottom{
 		display: flex;
 		margin-top: 20rpx;
+		margin-left: 30rpx;
+		padding-bottom: 10rpx;
 	}
 	.left{
 		width: 140rpx;
 		height: 140rpx;
 		margin-right: 20rpx;
-		border: 1rpx solid red;
 	}
 	.right{
-		/* flex: 1; */
 	}
 	.row{
 		font-size: 26rpx;
@@ -169,7 +179,7 @@
 	}
 	.row_title{
 		display: inline-block;
-		width: 320rpx;
+		width: 310rpx;
 		margin-right: 200rpx;
 	}
 	.num{
@@ -209,8 +219,18 @@
 		font-size: 29rpx;
 		color: #3B3B3B;
 	}
+	.line{
+		display: inline-block;
+		width: 4rpx;
+		height: 29rpx;
+		background-color: #FE5001;
+		margin: 8rpx;
+	}
 	.order_num{
 		/* margin-top: 28rpx; */
+	}
+	.order-text{
+		color: #3B3B3B;
 	}
 	.order_time{
 		/* margin-top: 20rpx; */
@@ -227,7 +247,7 @@
 		width: 100%;
 		height:120rpx;
 		text-align: center;
-		/* border-top:3rpx solid #999 */
+		border-top:7rpx solid rgba(181,181,181,0.5)
 	}
 	.item{
 		width: 160rpx;
@@ -236,6 +256,8 @@
 		border: 2rpx solid #999999;
 		border-radius: 16rpx;
 		margin-right: 30rpx;
+		font-size: 31rpx;
+		color: #666666;
 	}
 	.item.pay{
 		border-color: #FE5001;

@@ -24,7 +24,8 @@
 			open() {
 				this.$refs.popup.open()
 			}
-		}
+		},
+
 
 	}
 </script>

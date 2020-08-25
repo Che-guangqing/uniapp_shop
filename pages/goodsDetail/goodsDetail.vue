@@ -6,9 +6,9 @@
 					<image :src="item" mode="" class="swiper_img"></image>
 				</swiper-item>
 			</swiper>
-			<view class="swiper_card">
+			<button class="swiper_card" @click="onshare" open-type="share">
 				推荐好友
-			</view>
+			</button>
 		</view>
 		<view class="goods_info">
 			<text class="goods_des">
@@ -31,12 +31,13 @@
 			</view>
 		</view>
 
-		<view class="show">
+<!-- 		<view class="show">
 			<view class="show_title">
 				兑换说明
 			</view>
 			反反复复付付付付付付付地方法科技佛法看懂食品款卡螺丝刀，了电控柜皮肤科目搜女。
-		</view>
+		</view> -->
+		
 		<view class="pingjia">
 			<view class="pingjia_title">用户评价</view>
 			<view class="pingjia_info">
@@ -65,24 +66,19 @@
 			商品详情
 		</view>
 		<view class="bottom">
-			<view class="bottom_left">
-				<image class="b_img" v-if="collect" src="../../static/shop/collect0.png" mode=""></image>
-				<image class="b_img" v-else src="../../static/shop/collect1.png" mode=""></image>
+			<view class="bottom_left" @click="onCollect">
+				<image class="b_img" v-if="!collect" src="../../static/shop/collect0.png" ></image>
+				<image class="b_img" v-else src="../../static/shop/collect1.png" ></image>
 				<view class="bottom_text">
-					已收藏
+					{{collect?'已收藏':'收藏'}}
 				</view>
 			</view>
-			<view class="bottom_right">
-				<view class="share">
-					商城币不够，快去邀请好友玩游戏吧
-				</view>
-			</view>
+			<button class="bottom_right" @click="onshare" open-type="share">
+				商城币不够，快去邀请好友玩游戏吧
+			</button>
 		</view>
 
 		<popUp ref="popup" :goodsData="goods" ></popUp>
-
-
-
 	</view>
 </template>
 
@@ -92,31 +88,46 @@
 		data() {
 			return {
 				goods: null,
-				collect: false
+				collect: true
 			}
 		},
 		methods: {
-			openPopup() {
+			openPopup () {
 				this.$refs.popup.open()
 				console.log(this.$refs.popup)
+			},
+			onshare () {
+				return {
+					title:'海蓝之谜',
+					path:'',
+					imageUrl:'',
+					success(res) {
+						console.log('success',res)
+					},
+					fail:(err) => {
+						console.log('error',err)
+					}
+				}
+			},
+			onCollect() {
+				this.collect= !this.collect
 			}
 		},
 		components: {
 			popUp
 		},
 		onLoad(option) {
-
 			console.log(JSON.parse(option.info))
 			// console.log(typeof(option.info))
 			this.goods = JSON.parse(option.info)
-		}
+		},
 	}
 </script>
 
 <style>
 	.wrapper {
 		width: 100%;
-		height: 2870rpx;
+		height: 2370rpx;
 		background-color: #f6f6f6;
 	}
 
@@ -147,6 +158,7 @@
 		position: absolute;
 		right: 0;
 		bottom: 74rpx;
+		padding: 0;
 	}
 
 	/* goods_info */
@@ -177,7 +189,7 @@
 	.price {
 		font-size: 36rpx;
 		color: #de3238;
-		width: 450rpx;
+		width: 430rpx;
 		line-height: 75rpx;
 	}
 
@@ -197,10 +209,9 @@
 		height: 75rpx;
 		width: 690rpx;
 		line-height: 75rpx;
-
+		margin-top: 0;
 	}
-
-	.row.row_b {
+	.row.row_b {		
 		border-bottom: 1rpx solid #EDEDED;
 		color: #3B3B3B;
 	}
@@ -232,8 +243,7 @@
 	.pingjia {
 		background-color: #FFFFFF;
 		margin-top: 20rpx;
-		padding: 30rpx 0 0 30rpx;
-		/* padding-bottom: 30rpx; */
+		padding: 30rpx 0 30rpx 30rpx;
 	}
 
 	.pingjia_title {
@@ -288,7 +298,7 @@
 	.pingjia_btn {
 		margin: 0 auto;
 		margin-top: 34rpx;
-		/* margin-bottom: 30rpx; */
+		margin-bottom: 30rpx;
 		background-color: #ffe700;
 		width: 200rpx;
 		height: 60rpx;
@@ -297,7 +307,6 @@
 		border-radius: 19rpx;
 		font-size: 29rpx;
 		color: #3B3B3B;
-		margin-bottom: 30rpx;
 	}
 
 	.goods_detail {
@@ -318,20 +327,26 @@
 	.bottom_left {
 		padding: 0 30rpx;
 		margin-right: 40rpx;
-
+        text-align: center;
+		
+		width: 78rpx;
 	}
 
 	.b_img {
 		width: 45rpx;
 		height: 43rpx;
 	}
-
 	.bottom_text {
 		font-size: 26rpx;
 		color: #3B3B3B;
 	}
 
 	.bottom_right {
+		margin: 0;
+		padding: 0;
+		border: 1px solid transparent;  //自定义边框
+		outline: none;    //消除默认点击蓝色边框效果
+		
 		width: 540rpx;
 		height: 80rpx;
 		line-height: 80rpx;

@@ -14,10 +14,10 @@
 			</swiper>
 		</view>
 		
-		<view class="nav">
+		<view class="nav"> 
 			<view class="nav_item" v-for="(item,index) in navList" :key="index">
 				<image class="nav_icon" :src="item.url" mode=""></image>
-				<text class="nav_text">{{item.text}}</text>
+				<text class="nav_text">{{money}}</text>
 			</view>
 		</view>
 		<view class="bg">
@@ -74,12 +74,15 @@
 </template>
 
 <script>
+	import {
+		mapState
+	} from 'vuex'
 	export default {
 		data() {
 			return {
 				navList: [{
 						url: '../../static/shop/icon/币.png',
-						text: '20000'
+						text:this.money
 					},
 					{
 						url: '../../static/shop/icon/钻石.png',
@@ -136,10 +139,10 @@
 					typeDes: '使用商城币兑换相应产品，不限次数',
 					cont: [{
 						id:1,
-						img: '../../static/shop/goods.jpg',
-						goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦绿',
+						img: '../../static/1.jpg',
+						goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦',
 						icon: '',
-						price: '199',
+						price: '599',
 						num: '999+',
 						
 						swiperImg:["../../static/1.jpg","../../static/2.jpg","../../static/3.jpeg"],
@@ -149,14 +152,15 @@
 					}, {
 						id:2,
 						img: '../../static/shop/goods.jpg',
-						goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦绿',
+						
+						goodsDes: '雅诗兰黛，啦啦啦啦啦啦啦啦啦啦啦啦',
 						icon: '',
-						price: '199',
+						price: '299',
 						num: '5000',
 						
 						swiperImg:["../../static/4.jpg","../../static/5.jpg","../../static/6.jpg"],
-						size:['S','M','L'],
-						color:['黄色','紫色']
+						size:['S','M'],
+						color:['黄色','紫色','白色']
 					}, ]
 				}, {
 					type: '密友专区',
@@ -164,25 +168,34 @@
 					typeDes: '密友越多，解锁更多专项产品',
 					cont: [{
 						img: '../../static/shop/goods2.png',
-						goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦绿',
+						goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦',
 						icon: '',
-						price: '199',
-						num: '5000'
+						price: '399',
+						num: '5000',
+						swiperImg:["../../static/4.jpg","../../static/5.jpg","../../static/6.jpg"],
+						size:['S','M'],
+						color:['黄色','紫色','白色']
 					}, {
 						img: '../../static/shop/goods3.jpg',
-						goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦绿',
+						goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦',
 						icon: '',
-						price: '199',
-						num: '999+'
+						price: '299',
+						num: '999+',
+						swiperImg:["../../static/4.jpg","../../static/5.jpg","../../static/6.jpg"],
+						size:['S','M','L'],
+						color:['黄色','紫色']
 					},{
 						img: '../../static/shop/goods4.jpg',
-						goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦绿',
+						goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦',
 						icon: '',
 						price: '199',
-						num: '999+'
+						num: '999+',
+						swiperImg:["../../static/4.jpg","../../static/5.jpg","../../static/6.jpg"],
+						size:['S','M','L'],
+						color:['黄色','紫色']
 					}, {
 						img: '../../static/shop/goods.jpg',
-						goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦绿',
+						goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦',
 						icon: '',
 						price: '199',
 						num: '999+'
@@ -217,7 +230,10 @@
 				});
 					// console.log(item)
 			}
-		}
+		},
+		computed: {
+			...mapState(['money']),
+		},
 	}
 </script>
 

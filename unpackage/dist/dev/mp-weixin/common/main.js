@@ -110,9 +110,16 @@ __webpack_require__.r(__webpack_exports__);
     // console.log(uni.getStorageSync('alist'))
 
   },
-  onShow: function onShow() {// 后台进入前台
-    // console.log('App Show');
-  },
+  // onShow: function(res) { // 后台进入前台
+  //     console.log(res.shareTicket)
+  // 	uni.getShareInfo({
+  // 		shareTicket:res.shareTicket,
+  // 		success(res) {
+  // 			console.log(res)
+  // 		}
+  // 	})
+  // 	// console.log('App Show');
+  // },
   onHide: function onHide() {// 前台进入后台
     // console.log('App Hide');
   } };exports.default = _default;

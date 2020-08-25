@@ -138,88 +138,91 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _vuex = __webpack_require__(/*! vuex */ 12);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
+
+
 {
   data: function data() {
     return {
       navList: [{
         url: '../../static/shop/icon/币.png',
-        text: '20000' },
+        text: this.money },
 
       {
         url: '../../static/shop/icon/钻石.png',
@@ -276,10 +279,10 @@ var _default =
         typeDes: '使用商城币兑换相应产品，不限次数',
         cont: [{
           id: 1,
-          img: '../../static/shop/goods.jpg',
-          goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦绿',
+          img: '../../static/1.jpg',
+          goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦',
           icon: '',
-          price: '199',
+          price: '599',
           num: '999+',
 
           swiperImg: ["../../static/1.jpg", "../../static/2.jpg", "../../static/3.jpeg"],
@@ -289,14 +292,15 @@ var _default =
         {
           id: 2,
           img: '../../static/shop/goods.jpg',
-          goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦绿',
+
+          goodsDes: '雅诗兰黛，啦啦啦啦啦啦啦啦啦啦啦啦',
           icon: '',
-          price: '199',
+          price: '299',
           num: '5000',
 
           swiperImg: ["../../static/4.jpg", "../../static/5.jpg", "../../static/6.jpg"],
-          size: ['S', 'M', 'L'],
-          color: ['黄色', '紫色'] }] },
+          size: ['S', 'M'],
+          color: ['黄色', '紫色', '白色'] }] },
 
       {
         type: '密友专区',
@@ -304,25 +308,34 @@ var _default =
         typeDes: '密友越多，解锁更多专项产品',
         cont: [{
           img: '../../static/shop/goods2.png',
-          goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦绿',
+          goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦',
           icon: '',
-          price: '199',
-          num: '5000' },
+          price: '399',
+          num: '5000',
+          swiperImg: ["../../static/4.jpg", "../../static/5.jpg", "../../static/6.jpg"],
+          size: ['S', 'M'],
+          color: ['黄色', '紫色', '白色'] },
         {
           img: '../../static/shop/goods3.jpg',
-          goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦绿',
+          goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦',
           icon: '',
-          price: '199',
-          num: '999+' },
+          price: '299',
+          num: '999+',
+          swiperImg: ["../../static/4.jpg", "../../static/5.jpg", "../../static/6.jpg"],
+          size: ['S', 'M', 'L'],
+          color: ['黄色', '紫色'] },
         {
           img: '../../static/shop/goods4.jpg',
-          goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦绿',
+          goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦',
           icon: '',
           price: '199',
-          num: '999+' },
+          num: '999+',
+          swiperImg: ["../../static/4.jpg", "../../static/5.jpg", "../../static/6.jpg"],
+          size: ['S', 'M', 'L'],
+          color: ['黄色', '紫色'] },
         {
           img: '../../static/shop/goods.jpg',
-          goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦绿',
+          goodsDes: '海蓝之谜，啦啦啦啦啦啦啦啦啦啦啦啦',
           icon: '',
           price: '199',
           num: '999+' }] }],
@@ -356,7 +369,10 @@ var _default =
         url: "../goodsDetail/goodsDetail?info=" + JSON.stringify(item) });
 
       // console.log(item)
-    } } };exports.default = _default;
+    } },
+
+  computed: _objectSpread({},
+  (0, _vuex.mapState)(['money'])) };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

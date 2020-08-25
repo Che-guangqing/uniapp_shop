@@ -15,9 +15,16 @@
 			// console.log(uni.getStorageSync('alist'))
 
 		},
-		onShow: function() { // 后台进入前台
-			// console.log('App Show');
-		},
+		// onShow: function(res) { // 后台进入前台
+		//     console.log(res.shareTicket)
+		// 	uni.getShareInfo({
+		// 		shareTicket:res.shareTicket,
+		// 		success(res) {
+		// 			console.log(res)
+		// 		}
+		// 	})
+		// 	// console.log('App Show');
+		// },
 		onHide: function() { // 前台进入后台
 			// console.log('App Hide');
 		},

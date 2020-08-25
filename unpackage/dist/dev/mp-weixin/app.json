@@ -56,5 +56,6 @@
       "desc": "位置信息"
     }
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap65.json"
 }
